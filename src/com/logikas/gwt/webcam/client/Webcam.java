@@ -53,7 +53,7 @@ public abstract class Webcam {
 
   protected final HandlerManager handlerManager = new HandlerManager(this);
 
-  protected Widget currentWidget;
+  protected Widget currentCanvas;
 
   public static interface CompleteHandler extends EventHandler {
 
@@ -194,17 +194,17 @@ public abstract class Webcam {
 
   public abstract void setStealthEnabled(boolean stealthEnabled);
 
-  protected abstract Widget createWidget(int width, int height, int serverWidth, int serverHeight);
+  protected abstract Widget createCanvas(int width, int height, int serverWidth, int serverHeight);
 
-  public Widget createCurrentWidget(int width, int height, int serverWidth, int serverHeight) {
-    if (currentWidget != null) {
-      currentWidget.removeFromParent();
+  public Widget createCurrentCanvas(int width, int height, int serverWidth, int serverHeight) {
+    if (currentCanvas != null) {
+      currentCanvas.removeFromParent();
     }
-    currentWidget = createWidget(width, height, serverWidth, serverHeight);
-    return currentWidget;
+    currentCanvas = createCanvas(width, height, serverWidth, serverHeight);
+    return currentCanvas;
   }
 
-  public Widget createCurrentWidget(int width, int height) {
-    return createCurrentWidget(width, height, width, height);
+  public Widget createCurrentCanvas(int width, int height) {
+    return createCurrentCanvas(width, height, width, height);
   }
 }
