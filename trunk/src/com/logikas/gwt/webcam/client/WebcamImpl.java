@@ -24,17 +24,17 @@ class WebcamImpl extends Webcam {
 
   protected WebcamImpl() {
 
-    final JsWebcam element = JsWebcam.get();
+    final JsWebcam jsWebcam = JsWebcam.get();
 
-    element.set_hook(JsWebcam.ON_LOAD_HOOK, createOnLoadHook());
+    jsWebcam.set_hook(JsWebcam.ON_LOAD_HOOK, createOnLoadHook());
 
-    element.set_hook(JsWebcam.ON_ERROR_HOOK, createOnErrorHook());
+    jsWebcam.set_hook(JsWebcam.ON_ERROR_HOOK, createOnErrorHook());
 
-    element.set_hook(JsWebcam.ON_COMPLETE_HOOK, createOnCompleteHook());
+    jsWebcam.set_hook(JsWebcam.ON_COMPLETE_HOOK, createOnCompleteHook());
 
-    element.set_swf_url(WebcamResources.INSTANCE.webcam().getUrl());
+    jsWebcam.set_swf_url(WebcamResources.INSTANCE.webcam().getUrl());
 
-    element.set_shutter_sound(true, WebcamResources.INSTANCE.shutter().getUrl());
+    jsWebcam.set_shutter_sound(true, WebcamResources.INSTANCE.shutter().getUrl());
   }
 
   private native JavaScriptObject createOnErrorHook() /*-{
