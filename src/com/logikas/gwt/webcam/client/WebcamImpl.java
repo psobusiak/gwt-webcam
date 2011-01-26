@@ -32,9 +32,9 @@ class WebcamImpl extends Webcam {
 
     jsWebcam.set_hook(JsWebcam.ON_COMPLETE_HOOK, createOnCompleteHook());
 
-    jsWebcam.set_swf_url(WebcamResources.INSTANCE.webcam().getUrl());
+    jsWebcam.set_swf_url(WebcamResources.INSTANCE.webcamMovie().getUrl());
 
-    jsWebcam.set_shutter_sound(true, WebcamResources.INSTANCE.shutter().getUrl());
+    jsWebcam.set_shutter_sound(true, WebcamResources.INSTANCE.shutterSound().getUrl());
   }
 
   private native JavaScriptObject createOnErrorHook() /*-{

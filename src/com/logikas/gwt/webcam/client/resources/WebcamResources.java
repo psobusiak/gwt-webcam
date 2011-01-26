@@ -24,8 +24,8 @@ public interface WebcamResources extends ClientBundle {
   public static final WebcamResources INSTANCE = GWT.create(WebcamResources.class);
 
   @Source("shutter.mp3")
-  DataResource shutter();
+  DataResource shutterSound();
 
   @Source("webcam.swf")
-  DataResource webcam();
+  DataResource webcamMovie();
 }
