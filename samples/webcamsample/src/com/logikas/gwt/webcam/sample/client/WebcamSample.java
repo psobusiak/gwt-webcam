@@ -16,45 +16,13 @@
 package com.logikas.gwt.webcam.sample.client;
 
 import com.google.gwt.core.client.EntryPoint;
-import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.RootPanel;
-import com.google.gwt.user.client.ui.Widget;
-import com.logikas.gwt.webcam.client.Webcam;
-import com.logikas.gwt.webcam.client.Webcam.ErrorEvent;
-import com.logikas.gwt.webcam.client.Webcam.LoadEvent;
 
 public class WebcamSample implements EntryPoint {
 
   @Override
   public void onModuleLoad() {
-
-    final Webcam webcam = Webcam.get();
-
-    webcam.setShutterSoundEnabled(true);
-    webcam.setApiUrl("resources");
-    webcam.setQuality(90);
-    webcam.setShutterSoundEnabled(false);
-    webcam.setStealthEnabled(true);
-
-    webcam.addWebcamErrorHandler(new Webcam.ErrorHandler() {
-
-      @Override
-      public void onError(ErrorEvent event) {
-        Window.alert("There is an error: " + event.getResult());
-      }
-    });
-
-    webcam.addWebcamLoadHandler(new Webcam.LoadHandler() {
-
-      @Override
-      public void onLoad(LoadEvent event) {
-        webcam.configure(Webcam.ConfigurationType.PRIVACY);
-      }
-    });
-
-    final Widget widget = webcam.createCurrentWidget(320, 240);
-
-    RootPanel.get("webcam").add(widget);
-
+    
+    RootPanel.get("webcam").add(new WebcamSampleWidget());
   }
 }
