@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+
+  <inherits name='com.google.gwt.user.User'/>
+  
+  <inherits name="com.google.gwt.resources.Resources" />
+  
+  <set-property name="ClientBundle.enableInlining" value="false" />
+
+  <script src="webcam.js" />
+  
+  <source path='client'/>
+
+</module>
