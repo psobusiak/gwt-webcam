@@ -20,12 +20,12 @@ import com.google.gwt.resources.client.ClientBundle;
 import com.google.gwt.resources.client.DataResource;
 
 public interface WebcamResources extends ClientBundle {
-	
-	public static final WebcamResources INSTANCE = GWT.create(WebcamResources.class);
-	
-	@Source("shutter.mp3")
-	DataResource shutter();
 
-	@Source("webcam.swf")
-	DataResource webcam();
+  public static final WebcamResources INSTANCE = GWT.create(WebcamResources.class);
+
+  @Source("shutter.mp3")
+  DataResource shutter();
+
+  @Source("webcam.swf")
+  DataResource webcam();
 }
