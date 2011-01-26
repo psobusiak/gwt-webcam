@@ -106,7 +106,7 @@ class WebcamImpl extends Webcam {
   }
 
   @Override
-  protected Widget createWidget(int width, int height, int serverWidth, int serverHeight) {
+  protected Widget createCanvas(int width, int height, int serverWidth, int serverHeight) {
     final String html = JsWebcam.get().get_html(width, height, serverWidth, serverHeight);
     final HTMLPanel panel = new HTMLPanel(html);
     panel.setPixelSize(width, height);
