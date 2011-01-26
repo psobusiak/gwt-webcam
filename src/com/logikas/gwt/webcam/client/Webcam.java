@@ -24,8 +24,12 @@ public abstract class Webcam {
 
   public static enum ConfigurationType {
 
-    CAMERA("camera"), PRIVACY("privacy"), DEFAULT("default"), LOCAL_STORAGE("localStorage"), MICROPHONE(
-        "microphone"), SETTINGS_MANAGER("settingsManager");
+    CAMERA("camera"), 
+    PRIVACY("privacy"), 
+    DEFAULT("default"), 
+    LOCAL_STORAGE("localStorage"), 
+    MICROPHONE("microphone"), 
+    SETTINGS_MANAGER("settingsManager");
 
     private final String typeName;
 
