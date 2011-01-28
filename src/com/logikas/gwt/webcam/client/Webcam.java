@@ -57,7 +57,7 @@ public abstract class Webcam {
 
   public static interface CompleteHandler extends EventHandler {
 
-    void onComplete(CompleteEvent event);
+    void onWebcamComplete(CompleteEvent event);
   }
 
   public static class CompleteEvent extends GwtEvent<CompleteHandler> {
@@ -85,7 +85,7 @@ public abstract class Webcam {
 
     @Override
     protected void dispatch(CompleteHandler handler) {
-      handler.onComplete(this);
+      handler.onWebcamComplete(this);
     }
   }
 
@@ -99,7 +99,7 @@ public abstract class Webcam {
 
   public static interface LoadHandler extends EventHandler {
 
-    void onLoad(LoadEvent event);
+    void onWebcamLoad(LoadEvent event);
   }
 
   public static class LoadEvent extends GwtEvent<LoadHandler> {
@@ -120,7 +120,7 @@ public abstract class Webcam {
 
     @Override
     protected void dispatch(LoadHandler handler) {
-      handler.onLoad(this);
+      handler.onWebcamLoad(this);
     }
   }
 
@@ -134,7 +134,7 @@ public abstract class Webcam {
 
   public static interface ErrorHandler extends EventHandler {
 
-    void onError(ErrorEvent event);
+    void onWebcamError(ErrorEvent event);
   }
 
   public static class ErrorEvent extends GwtEvent<ErrorHandler> {
@@ -162,7 +162,7 @@ public abstract class Webcam {
 
     @Override
     protected void dispatch(ErrorHandler handler) {
-      handler.onError(this);
+      handler.onWebcamError(this);
     }
   }
 
