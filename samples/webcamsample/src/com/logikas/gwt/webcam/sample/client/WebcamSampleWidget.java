@@ -28,7 +28,7 @@ import com.logikas.gwt.webcam.client.Webcam.ErrorEvent;
 import com.logikas.gwt.webcam.client.Webcam.LoadEvent;
 
 public class WebcamSampleWidget extends Composite {
-
+  
   private static WebcamSampleWidgetUiBinder uiBinder = GWT.create(WebcamSampleWidgetUiBinder.class);
 
   interface WebcamSampleWidgetUiBinder extends UiBinder<Widget, WebcamSampleWidget> {
@@ -45,11 +45,11 @@ public class WebcamSampleWidget extends Composite {
     webcam.setQuality(90);
     webcam.setShutterSoundEnabled(false);
     webcam.setStealthEnabled(true);
-
+        
     webcam.addWebcamErrorHandler(new Webcam.ErrorHandler() {
 
       @Override
-      public void onError(ErrorEvent event) {
+      public void onWebcamError(ErrorEvent event) {
         Window.alert("There is an error: " + event.getResult());
       }
     });
@@ -57,7 +57,7 @@ public class WebcamSampleWidget extends Composite {
     webcam.addWebcamLoadHandler(new Webcam.LoadHandler() {
 
       @Override
-      public void onLoad(LoadEvent event) {
+      public void onWebcamLoad(LoadEvent event) {
         webcam.configure(Webcam.ConfigurationType.PRIVACY);
       }
     });
